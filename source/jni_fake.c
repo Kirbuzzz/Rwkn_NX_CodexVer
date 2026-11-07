@@ -475,8 +475,13 @@ static void *call_object(const char *name, const char *sig, va_list va) {
   if (!strcmp(name, "getDeviceGameVersion"))
     return jni_make_string("3.9.95");
   if (!strcmp(name, "keyChainGetDataForKey") ||
-      !strcmp(name, "getURLParams"))
+      !strcmp(name, "getURLParams") ||
+      !strcmp(name, "getProxy")) {
+    /* proxy.enable=false en game.properties: el valor vacio es intencional. */
+    if (!strcmp(name, "getProxy"))
+      LOG("JNI getProxy: proxy desactivado por game.properties; devolviendo cadena vacia");
     return jni_make_string("");
+  }
   if (!strcmp(name, "getFilePath"))
     return jni_make_string(path_data());
 
@@ -636,6 +641,7 @@ static void call_void(const char *name, const char *sig, va_list va) {
   // SDKs de terceros, anuncios, analiticas, redes sociales, alarmas, descargas...: sin efecto
   static const char *const noop[] = {
     "AppsFlyerTrackEvent", "FB", "MAT", "InitMAT", "Magnet_", "cache", "dlc_", "display", "logErrorOnline",
+    "setLogEnabled", "onStartSession",
     "promptForRating", "registerForFCM", "save", "setLast", "setMAT", "show", "play", "update", "initializeSDK",
     "CancelAlarm", "GenerateBitmap", "VKeyboardOpen", "SetActivity", "Initialize", "Load", "connect", "set",
     "fetch", "delete", "remove", "bannerClosed", "interstitial", "moreGames", "trackCrossPromo", "shouldDownload",
