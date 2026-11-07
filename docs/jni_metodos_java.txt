@@ -1,0 +1,220 @@
+# Metodos Java de com.ubisoft.* cuyo nombre aparece como cadena en libuaf.so
+# (= lo que el motor puede llamar por JNI). Generado con tools/dex*.py sobre Reawaken.apk (versionCode 2086).
+# Formato:  [static] retorno nombre(parametros)
+
+
+== AppRater
+   AlertDialog demo()
+   AlertDialog show()
+
+== AppsFlyerManager
+   void AppsFlyerTrackEvent(String, HashMap)
+
+== CrossPromoNative
+   Integer getZipSizeOnServer(String)
+   String getFilePath()
+   String getInfoFromJson(String, String)
+   String getURLParams(String)
+   String getZipDownloadURL(String)
+   boolean IsNewDataAvailable(String)
+   boolean checkSpaceAvailable(String)
+   boolean copyDefaultZip(String)
+   boolean deleteZipfile(String)
+   boolean isFileExists(String)
+   boolean shouldDownload(String)
+   static CrossPromoNative getInstance()
+   static void fetchDataOnIntervalPassedNative()
+   void SetActivity(Activity, String, String, String, String, String, String)
+   void SetFileModificationTime(String)
+   void SetUpdateTimeIntervalNative(int)
+   void bannerClosedCallback(String)
+   void bannerContinuedToURLCallback(String)
+   void bannerOpenedCallback(String)
+   void connectivityIssueCallback(String)
+   void deleteOldData()
+   void deleteOldTmpData()
+   void displayError(int)
+   void fetchDataManuallyNative()
+   void inGameLocationTriggeredCallback(String)
+   void interstitialClosedCallback(String)
+   void interstitialContinuedToURLCallback(String)
+   void interstitialOpenedCallback(String)
+   void moreGamesClosedCallback(String)
+   void moreGamesContinuedToURLCallback(String)
+   void moreGamesOpenedCallback(String)
+   void removeWebViewAndTriggerClosedCallBack()
+   void removeWebview(int)
+   void setCountry(String)
+   void setGameParamNative(String)
+   void shouldDownloadCallbackNative(String, String, boolean)
+   void showErrorCallback(int)
+   void showWebview(int)
+   void trackCrossPromoActionCallBack(String, String, String)
+   void updateZipDownloadURL(String)
+
+== FacebookUtil
+   String getUserInfo()
+   void login(boolean)
+
+== FacebookUtil$PendingAction
+   static FacebookUtil$PendingAction valueOf(String)
+   static FacebookUtil$PendingAction[] values()
+
+== FacebookUtil$PermissionType
+   static FacebookUtil$PermissionType valueOf(String)
+   static FacebookUtil$PermissionType[] values()
+
+== FacebookUtil$ResultState
+   static FacebookUtil$ResultState valueOf(String)
+   static FacebookUtil$ResultState[] values()
+
+== FacebookUtil$Status
+   static FacebookUtil$Status valueOf(String)
+   static FacebookUtil$Status[] values()
+
+== GL2JNIView
+   static void setEnableResolutionLimitation(boolean)
+   static void setTargetScreenResolution(int, float)
+
+== GameActivity
+   String FBGetAccessToken()
+   String FBGetFriendsList()
+   String FBGetUserInfo()
+   String GetMacAddress()
+   String getCountryCode()
+   String getCountryLangCodeForGDPR()
+   String getDeviceManufacturer()
+   boolean AskForAccountsPermission()
+   boolean HasAccountsPermission()
+   boolean canShowAdsHint()
+   boolean dlc_check_DM_File(String, String, int)
+   boolean dlc_createDownloadContent(int)
+   boolean dlc_isSpaceAvailable(int)
+   boolean getPlayerAnalyticsPreference()
+   boolean getPlayerMarketingPreference()
+   boolean hasRewardedVideoAvailable()
+   boolean isCoppaAlreadyDisplayed()
+   boolean isCountryGdpr()
+   boolean isEveryPlayAvailable()
+   boolean isFaceBookAppInstalled()
+   boolean isGDPRAlreadyDisplayed()
+   boolean isGamePadConnected()
+   boolean isGamePadKeyPressed(int, int)
+   boolean isTwitterAvailable()
+   boolean storagePermissionForFaceBook()
+   int CallGenericJavaMethod_Int(String, int)
+   int FBGetFBPostStatus()
+   int FBGetFriendsListStatus()
+   int FBGetGameRequestStatus()
+   int FBGetLoginState()
+   int SetAlarmNotification(String, String, String, int)
+   int callbackAssertMessage(String, String)
+   int checkSpaceDisk(int)
+   int connectTwitter()
+   int dlc_check_DM_DownloadErrorFor(int)
+   int dlc_start_DM_DownloadContent(String, String, String, int)
+   int getCoppaPlayerAge()
+   int getDeviceAPILevel()
+   int getLastPlayedSlot()
+   int getProcessorCount()
+   int getTimeZoneOffset()
+   int openClosableURL(String)
+   int openURL(String)
+   int playMovie(String)
+   void AppsFlyerTrackEvent(String, HashMap)
+   void CancelAlarm()
+   void CancelAlarm(int)
+   void FBAuthorize(String, String, boolean)
+   void FBEnableLogAppEvents(boolean)
+   void FBFetchFriendsList()
+   void FBLogOut()
+   void FBPostOnFacebook(String, String, String)
+   void FBSendInvitationToPlayGame(String, String)
+   void FBTrackAppActivated()
+   void FBTrackPurchasedEvent(String, String, float)
+   void FBTrackTutorialComplete()
+   void GenerateBitmap(String, int, int, int, int, int, int, int, int, int, float, float, int, int, int[], int[], int, int)
+   void InitMAT(String)
+   void MATSetUserId(String)
+   void MATTrackIAP(String, String, String, String, String, double)
+   void MATTutorialComplete()
+   void Magnet_hideInfoBadge()
+   void Magnet_showInfoBadge()
+   void Magnet_showUrgentNewsDialog()
+   void Magnet_showWebNewsDialog()
+   void VKeyboardOpen()
+   void cacheDailyRewardVideos()
+   void cacheInterstitials()
+   void cacheRewardedVideos()
+   void displayTwitter(String, String)
+   void dlc_addDownloadContent(int, String, String, String, int)
+   void dlc_startDownloadContent(int, boolean)
+   void exitTheGame()
+   void getGamePadAxisValues(int, int)
+   void initializeSDKForGDPR()
+   void logErrorOnline(String, String, String, int, int, int)
+   void moveGameToBackGround()
+   void playMoPubVideo(int)
+   void promptForRating()
+   void registerForFCM(boolean)
+   void saveCoppaPlayerAge(int)
+   void saveGDPRAnalyticsPreference(boolean)
+   void saveGDPRMarketingPreference(boolean)
+   void setLastPlayedSlot(int)
+   void setMATCurrency(String)
+   void setTargetScreenResolution(int, float)
+   void showMoPubInterstitial()
+   void updateSDKForGDPR()
+
+== GameActivity$ConnectionStateMonitor
+   void disable(Context)
+   void enable(Context)
+
+== GamePackage
+   String getName()
+   String getUrl()
+
+== GameProperties
+   String getProperty(String)
+
+== GameServicesHelper
+   String GetOauth2Token()
+   void connect()
+   void updateAchievement(String)
+
+== GameServicesHelper$Status
+   static GameServicesHelper$Status valueOf(String)
+   static GameServicesHelper$Status[] values()
+
+== GameServicesWrapper
+   static ArrayList GetGameAchievements()
+   static String GetOauth2Token()
+   static boolean IsAchievementUIClosed()
+   static boolean isConnected()
+   static int AchievementsLoadingStatus()
+   static int getConnectionStatus()
+   static void Initialize()
+   static void LoadAchievements()
+   static void ShowAchievementInterface()
+
+== GameServicesWrapper$ConnectionResult
+   static GameServicesWrapper$ConnectionResult valueOf(String)
+   static GameServicesWrapper$ConnectionResult[] values()
+
+== GdprHelper
+   int getCoppaPlayerAge()
+   static GdprHelper getInstance()
+   void saveCoppaPlayerAge(int)
+   void setActivity(Activity)
+
+== InstallActivity
+   String getProperty(String)
+
+== JavaScriptHandler
+   void setResult(String)
+
+== NetworkController
+   static void logErrorOnline(String, String)
+
+== XMediateInterstitialManager
+   void show()

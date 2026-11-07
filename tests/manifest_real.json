@@ -1,0 +1,55 @@
+{
+  "reawaken": {
+    "obb": {
+      "version": 2,
+      "fileName": "main.2086.com.ubisoft.raymanadventures.obb",
+      "url": "https://reawaken-lb.throwaway09728.workers.dev/dl/reawaken/obb-v2-20261013-001049/main.2086.com.ubisoft.raymanadventures.obb",
+      "size": 424073570,
+      "md5": "85d9746c62701b5824ba89f819d35aa5",
+      "published": "20261013-001049"
+    },
+    "package": "com.ubisoft.raymanadventures",
+    "apk": {
+      "versionCode": 2086,
+      "versionName": "3.9.95",
+      "url": "https://reawaken-lb.throwaway09728.workers.dev/dl/reawaken/apk-20261103-073452/reawaken-20261103-073452.apk",
+      "size": 66182220,
+      "md5": "d95d5bea03ae14bf08835bfd47523c1c",
+      "published": "20261103-073452"
+    },
+    "obbHd": {
+      "version": 1,
+      "fileName": "main.2086.com.ubisoft.raymanadventures.obb",
+      "url": "https://reawaken-lb.throwaway09728.workers.dev/dl/reawaken/obbhd-v1-20261018-171010/main.2086.com.ubisoft.raymanadventures.obb",
+      "size": 506302828,
+      "md5": "9a7abdebc034bae5043a01d1d01bdb7a",
+      "published": "20261018-171010"
+    },
+    "pc": {
+      "version": 8,
+      "url": "https://reawaken-lb.throwaway09728.workers.dev/dl/reawaken/pc-v8-20261103-073846/Reawaken_PC_update.zip",
+      "size": 32017681,
+      "md5": "85cc2b60179a852ed5d2261dfca36361",
+      "exeMd5": "a392bc0992cf9d370a2c48f32ba7834e",
+      "published": "20261103-073846",
+      "prevExeMd5": [
+        "8eef61a4e7b3b48819ea0e7fd2a823a5",
+        "f6394b58b18835484fe48a222133eff7",
+        "b1a2e8063935ce9cb941397fa7fb7f20",
+        "271e8409f89e575e6bb68670f0edc6e1"
+      ]
+    }
+  },
+  "updated": "20261103-073846",
+  "toolkit": {
+    "package": "com.ra_toolkit",
+    "apk": {
+      "versionCode": 1,
+      "versionName": "1.0",
+      "url": "https://reawaken-lb.throwaway09728.workers.dev/dl/toolkit/apk-20261019-220445/toolkit-20261019-220445.apk",
+      "size": 1750684,
+      "md5": "d5c0fc5c163aefac95d1d8d226efbb7a",
+      "published": "20261019-220445"
+    }
+  }
+}
