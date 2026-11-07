@@ -152,10 +152,10 @@ void game_boot(int w, int h) {
   void *activity = jni_make_object("com/ubisoft/uaf/GameActivity");
   void *assets = jni_make_object("android/content/res/AssetManager");
 
-  if (!modmenu_compat_attach("libuaf.so",
-          "Java_com_ubisoft_uaf_UAFJNILib_InitGlobal", uaf.InitGlobal)) {
-    fatal_error("No se pudo preparar el adaptador Mod Menu / InitGlobal.");
-  }
+  /* No abortar el arranque si el punto de enganche no esta disponible.
+   * El wrapper conserva el comportamiento anterior: InitGlobal se llama
+   * directamente cuando el simbolo fue resuelto. */
+  modmenu_compat_prepare(uaf.InitGlobal);
   modmenu_compat_call_initglobal(fake_env, NULL, activity);
   LOG("InitGlobal ok");
   uaf.InitMobileSDK(fake_env, NULL);
