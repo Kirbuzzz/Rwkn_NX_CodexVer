@@ -12,17 +12,20 @@ static void fake_initglobal(void *env, void *cls, void *activity) {
 void log_printf(const char *fmt, ...) { (void)fmt; }
 
 int main(void) {
-  assert(!modmenu_compat_attach("libwrong.so",
-      "Java_com_ubisoft_uaf_UAFJNILib_InitGlobal", fake_initglobal));
-  assert(!modmenu_compat_attach("libuaf.so", "wrong_symbol", fake_initglobal));
-  assert(!modmenu_compat_attach("libuaf.so",
-      "Java_com_ubisoft_uaf_UAFJNILib_InitGlobal", 0));
-  assert(modmenu_compat_attach("libuaf.so",
-      "Java_com_ubisoft_uaf_UAFJNILib_InitGlobal", fake_initglobal));
+  /* La API vigente prepara el wrapper con el punto de entrada real. */
+  modmenu_compat_prepare(NULL);
+  modmenu_compat_call_initglobal((void *)0x11, (void *)0x22, (void *)0x33);
+  assert(calls == 0);
+
+  modmenu_compat_prepare(fake_initglobal);
   modmenu_compat_call_initglobal((void *)0x11, (void *)0x22, (void *)0x33);
   assert(calls == 1);
   modmenu_compat_engine_ready();
   modmenu_compat_shutdown();
-  puts("[ModMenuCompat] flujo virtual dlopen/dlsym/hook verificado");
+
+  /* El cierre debe dejar el adaptador desactivado. */
+  modmenu_compat_call_initglobal((void *)0x11, (void *)0x22, (void *)0x33);
+  assert(calls == 1);
+  puts("[ModMenuCompat] prepare/call/ready/shutdown verificado");
   return 0;
 }
