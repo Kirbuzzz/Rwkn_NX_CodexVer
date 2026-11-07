@@ -22,3 +22,9 @@ Busca en `data/log.txt` una linea `JNI PrepareFile:`:
 - `error copiando` / `no se pudo finalizar`: problema de escritura o del sistema de archivos.
 
 Si `PrepareFile` termina correctamente y el juego sigue en la pantalla de carga, el siguiente objetivo sera identificar si el motor espera una respuesta de servicios/conectividad o algun recurso del OBB. No se fuerza `isConnected()` a verdadero ni se simula una autenticacion exitosa sin evidencia.
+
+## SDK opcionales y proxy
+
+- `getProxy(String)`: devuelve cadena vacia porque `proxy.enable=false` en `game.properties`; no se simula un proxy activo.
+- `setLogEnabled(boolean)` y `onStartSession(Context, String)`: se tratan como operaciones opcionales de Flurry/analitica sin efecto en Switch. No proporcionan autenticacion ni criptografia.
+- Las llamadas de `MobileAuth` y `javax.crypto` NO se consideran implementadas por devolver objetos JNI simulados. En particular, `Mac.doFinal` y `SecretKeySpec` requieren una implementacion compatible antes de poder afirmar que el flujo de autenticacion funciona.
